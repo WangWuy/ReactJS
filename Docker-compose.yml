@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  frontend:
+    container_name: react-app
+    image: admission-frontend
+    build:
+      context: .
+    ports:
+      - 8080:80
