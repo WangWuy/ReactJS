@@ -297,7 +297,7 @@ section {
 	background: #ff7c7c;
 }
 .pattern:before {
-    background: #23d2e2 url("../images/dot-pattern.html") repeat scroll 0 0;
+    background: #23d2e2 url("../resources/images/dot-pattern.html") repeat scroll 0 0;
     opacity: 0.45;
 }
 .mate-black:before{
@@ -6545,7 +6545,7 @@ a.addnewforum {
 }
 /* Weather Widget */
 .weather-widget {
-    background-image: url("../public/resources/weather.jpg");
+    background-image: url("../public/images/weather.jpg");
     float: left;
     min-height: 300px;
     text-align: center;
@@ -7140,7 +7140,7 @@ a.addnewforum {
 }
 .gap.signin .bg-image{
 	height: 100vh;
-  background-image: url('../public/resources/theme-bg.jpg');
+  background-image: url('../public/images/theme-bg.jpg');
 }
 .we-login-register {
     background: rgba(250,99,66,.99);
@@ -15942,7 +15942,7 @@ a.shopping-cart > i {
 .coming-meta > h1 {
     font-weight: 500;
     font-size: 80px;
-    background-image: url(../public/resources/text-bg.jpg);
+    background-image: url('../public/images/text-bg.jpg');
 	text-transform: capitalize;
     padding-right: 30px;
 	

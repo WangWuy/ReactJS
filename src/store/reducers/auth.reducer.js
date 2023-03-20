@@ -1,4 +1,4 @@
-import { LOGIN_FAILURE, LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../../constants/auth.const";
+import { LOGIN_FAILURE, LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../../constants/auth-action.const";
 import { getLocalStorage, setLocalStorage } from "../../services/auth/localstorage.service";
 
 export const initialAuth = getLocalStorage('auth') || false;

@@ -8,7 +8,7 @@ const AuthRouter = ({ children, router = [] }) => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route element={auth ? <Outlet /> : <Navigate to='/login' />}>
+                <Route element={auth? <Outlet /> : <Navigate to='/login' />}>
                     {children(router.filter(item => !item['passAuth']))}
                 </Route>
                 <Route element={!auth ? <Outlet /> : <Navigate to='/' />}>

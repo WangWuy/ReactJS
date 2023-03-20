@@ -170,27 +170,27 @@ const Header = () => {
                                 <div className="setting-row">
                                     <span>use night mode</span>
                                     <input type="checkbox" id="nightmode"/> 
-                                    <label for="nightmode" data-on-label="ON" data-off-label="OFF"></label>
+                                    <label htmlFor="nightmode" data-on-label="ON" data-off-label="OFF"></label>
                                 </div>
                                 <div className="setting-row">
                                     <span>Notifications</span>
                                     <input type="checkbox" id="switch2"/> 
-                                    <label for="switch2" data-on-label="ON" data-off-label="OFF"></label>
+                                    <label htmlFor="switch2" data-on-label="ON" data-off-label="OFF"></label>
                                 </div>
                                 <div className="setting-row">
                                     <span>Notification sound</span>
                                     <input type="checkbox" id="switch3"/> 
-                                    <label for="switch3" data-on-label="ON" data-off-label="OFF"></label>
+                                    <label htmlFor="switch3" data-on-label="ON" data-off-label="OFF"></label>
                                 </div>
                                 <div className="setting-row">
                                     <span>My profile</span>
                                     <input type="checkbox" id="switch4"/> 
-                                    <label for="switch4" data-on-label="ON" data-off-label="OFF"></label>
+                                    <label htmlFor="switch4" data-on-label="ON" data-off-label="OFF"></label>
                                 </div>
                                 <div className="setting-row">
                                     <span>Show profile</span>
                                     <input type="checkbox" id="switch5"/> 
-                                    <label for="switch5" data-on-label="ON" data-off-label="OFF"></label>
+                                    <label htmlFor="switch5" data-on-label="ON" data-off-label="OFF"></label>
                                 </div>
                             </form>
                             <h4 className="panel-title">Account Setting</h4>
@@ -198,32 +198,32 @@ const Header = () => {
                                 <div className="setting-row">
                                     <span>Sub users</span>
                                     <input type="checkbox" id="switch6" /> 
-                                    <label for="switch6" data-on-label="ON" data-off-label="OFF"></label>
+                                    <label htmlFor="switch6" data-on-label="ON" data-off-label="OFF"></label>
                                 </div>
                                 <div className="setting-row">
                                     <span>personal account</span>
                                     <input type="checkbox" id="switch7" /> 
-                                    <label for="switch7" data-on-label="ON" data-off-label="OFF"></label>
+                                    <label htmlFor="switch7" data-on-label="ON" data-off-label="OFF"></label>
                                 </div>
                                 <div className="setting-row">
                                     <span>Business account</span>
                                     <input type="checkbox" id="switch8" /> 
-                                    <label for="switch8" data-on-label="ON" data-off-label="OFF"></label>
+                                    <label htmlFor="switch8" data-on-label="ON" data-off-label="OFF"></label>
                                 </div>
                                 <div className="setting-row">
                                     <span>Show me online</span>
                                     <input type="checkbox" id="switch9" /> 
-                                    <label for="switch9" data-on-label="ON" data-off-label="OFF"></label>
+                                    <label htmlFor="switch9" data-on-label="ON" data-off-label="OFF"></label>
                                 </div>
                                 <div className="setting-row">
                                     <span>Delete history</span>
                                     <input type="checkbox" id="switch10" /> 
-                                    <label for="switch10" data-on-label="ON" data-off-label="OFF"></label>
+                                    <label htmlFor="switch10" data-on-label="ON" data-off-label="OFF"></label>
                                 </div>
                                 <div className="setting-row">
                                     <span>Expose author name</span>
                                     <input type="checkbox" id="switch11" /> 
-                                    <label for="switch11" data-on-label="ON" data-off-label="OFF"></label>
+                                    <label htmlFor="switch11" data-on-label="ON" data-off-label="OFF"></label>
                                 </div>
                             </form>
                         </div>

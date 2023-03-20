@@ -7,7 +7,7 @@ const Layout = ({ children, showSidebar = IS_SHOW_SIDEBAR}) => {
     const isShowSidebar = showSidebar ? <Sidebar/> : <></>
     return (
         <>
-        <div class="theme-layout">
+        <div className="theme-layout">
             <Header  />
             {isShowSidebar}
             {children}
