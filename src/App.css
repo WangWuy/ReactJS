@@ -7232,6 +7232,11 @@ a.addnewforum {
     padding-top: 7px;
     text-transform: capitalize;
 }
+
+.form-error {
+    color: rgb(149, 5, 5);
+}
+
 a.with-smedia {
     border-radius: 30px;
     color: #fff;

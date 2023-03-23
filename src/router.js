@@ -1,6 +1,7 @@
 import NotfoundError from "./pages/Errors/NotfoundError";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 
 export const ROUTERS = [
   {
@@ -9,14 +10,9 @@ export const ROUTERS = [
     element: < Home />,
   },
   {
-    path: "/about-us",
-    passAuth: false,
-    element: <h2> About us </h2>,
-  },
-  {
     path: "/register",
     passAuth: true,
-    element: <h2>register</h2>
+    element: <Register/>
   },
   {
     path: "/login",
