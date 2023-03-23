@@ -26,7 +26,7 @@ const Header = () => {
                     </span>
                     <span className="mh-text">
                         <a href="newsfeed.html" title="">
-                            {/* <img src="../public/logo2.png" alt=""> */}
+                            <img src="../public/logo2.png" alt=""/>
                             </a>
                     </span>
                     <span className="mh-btns-right">
@@ -234,7 +234,7 @@ const Header = () => {
             <div className="topbar stick">
                 <div className="logo">
                     <a title="" href="newsfeed.html">
-                        {/* <img src="images/logo.png" alt=""> */}
+                        <img src="images/logo.png" alt=""/>
                         </a>
                 </div>
                 <div className="top-area">
@@ -274,7 +274,7 @@ const Header = () => {
                     </ul>
                     <div className="user-img">
                         <h5></h5>
-                        {/* <img src="images/resources/admin.jpg" alt=""> */}
+                        <img src="images/resources/admin.jpg" alt=""/>
                         <span className="status f-online"></span>
                         <div className="user-setting">
                             <span className="seting-title">Thiết lập người dùng</span>
@@ -314,7 +314,7 @@ const Header = () => {
                         </p>
                     </div>
                     <figure>
-                        {/* <img src="images/resources/baner-badges.png" alt=""> */}
+                        <img src="..baner-badges.png" alt=""/>
                         </figure>
                 </div>
             </section>

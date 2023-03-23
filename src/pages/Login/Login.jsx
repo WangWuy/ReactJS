@@ -76,7 +76,7 @@ const Login = () => {
                             <Col lg={8} >
                                 <div className="big-ad">
                                     <figure>
-                                        <img src="images/logo2.png" alt="" />
+                                        <img src="./images/logo2.png" alt="" />
                                     </figure>
                                     <h1>Welcome to the Pitnik</h1>
                                     <p>

@@ -9,7 +9,7 @@ const Layout = ({ children, showSidebar = IS_SHOW_SIDEBAR}) => {
         <>
         <div className="theme-layout">
             <Header  />
-            {isShowSidebar}
+            {/* {isShowSidebar} */}
             {children}
             <Footer />
         </div>
