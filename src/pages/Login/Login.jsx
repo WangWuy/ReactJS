@@ -24,7 +24,7 @@ const Login = () => {
                 <input {...register(emailValidationProperty.name, emailValidationProperty.options)} placeholder='Email' />
                 <span>{errors.email && <p className='form-error'>{errors.email.message}</p>}</span>
                 <input {...register(passwordValidationPropery.name, passwordValidationPropery.options)} type='password' placeholder='Password' />
-                <span>{errors.password && <p className='form-error'>Password is required.</p>}</span>
+                <span>{errors.password && <p className='form-error'>{errors.password.message}</p>}</span>
                 <input type="checkbox" /><label>Lưu mật khẩu</label>
                 <Link to='/forgot-password' className="forgot" >Quên mật khẩu</Link>
                 <button>Login</button>
