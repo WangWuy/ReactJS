@@ -7,7 +7,7 @@ export const loginAction = (state) => {
 }
 
 export const logoutAction = async (logout) => {
-    await setLocalStorage('auth', false);
+    setLocalStorage('auth', false);
     //handle logout
     return {
         type: LOGOUT_SUCCESS

@@ -17,5 +17,5 @@ const useOAuth2 = (props) => {
         loading: true,
         error: null,
       });
-  })
+  });
 }
