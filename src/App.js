@@ -4,7 +4,7 @@ import { ROUTERS } from './router';
 import { Route } from 'react-router-dom';
 import AuthRouter from './components/AuthRouter/AuthRouter';
 import {useReducer } from 'react';
-import { AuthContext, AuthDispatchContext, OAuth2Context } from './store/contexts/auth.context';
+import { AuthContext, AuthDispatchContext, OAuth2Context } from './contexts/auth.context';
 import { authReducer, initialAuth } from './store/reducers/auth.reducer';
 import { useAuth0 } from '@auth0/auth0-react';
 

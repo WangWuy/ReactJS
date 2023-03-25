@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import Layout from "../../components/Layout/Layout"
 import { removeLocalStorage, setLocalStorage } from "../../services/auth/localstorage.service"
 import { logoutAction } from "../../store/actions/auth.action"
-import { AuthContext, AuthDispatchContext, OAuth2Context } from "../../store/contexts/auth.context"
+import { AuthContext, AuthDispatchContext, OAuth2Context } from "../../contexts/auth.context"
 
 const Home = () => {
     const {logout, isAuthenticated} = useContext(OAuth2Context);

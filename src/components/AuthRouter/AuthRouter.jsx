@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom"
-import { AuthContext } from "../../store/contexts/auth.context";
+import { AuthContext } from "../../contexts/auth.context";
 
 const AuthRouter = ({ children, router = [] }) => {
     const auth = useContext(AuthContext);
