@@ -14,15 +14,7 @@ import { OAUTH2_CLIENT_ID, OAUTH2_DOMAIN } from './constants/oauth2.const';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Auth0Provider
-    domain={OAUTH2_DOMAIN}
-    clientId={OAUTH2_CLIENT_ID}
-    authorizationParams={{
-      redirect_uri: window.location.origin
-    }}
-    >
       <App />
-    </Auth0Provider>
   </React.StrictMode>
 );
 

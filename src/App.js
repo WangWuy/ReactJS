@@ -11,6 +11,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 function App() {
   const [auth, dispatch] = useReducer(authReducer, initialAuth);
+  console.log(auth);
 
 
   return (

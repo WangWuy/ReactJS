@@ -9,15 +9,11 @@ export const fullNameValidation = {
 }
 
 export const emailValidationProperty = {
-    name: 'email',
+    name: 'username',
     options: {
         required: {
             value: true,
-            message: 'Vui lòng nhập email'
-        },
-        pattern: {
-            value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-            message: 'Email không hợp lệ'
+            message: 'Vui lòng nhập username'
         }
     }
 }

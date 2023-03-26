@@ -7,10 +7,14 @@ export const HTTP_METHODS = {
 
 /** ================ BASE URL ================== */
 
-export const SERVER_URL = 'localhost:3000';
-export const WEBSOCKET_URL = 'localhost:9000';
+export const HTTP_URL = 'https://ed48-14-161-49-145.ap.ngrok.io';
+export const WEBSOCKET_URL = 'ws://localhost:8000';
 
 
 /**================= SCOPES ===================== */
-export const AUTH_SCOPE = 'auth';
+export const AUTH_SCOPE = 'oauth';
 export const POST_SCOPE = 'post';
+
+
+/**================= TIMEOUT ===================== */
+export const SERVER_TIMEOUT = 300000;

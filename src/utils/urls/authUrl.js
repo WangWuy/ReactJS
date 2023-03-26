@@ -1,20 +1,20 @@
-import { AUTH_SCOPE, HTTP_METHODS } from "../../constants/default.const";
+import { AUTH_SCOPE, HTTP_METHODS, HTTP_URL } from "../../constants/default.const";
 
-const LOGIN_USER_URL = `${AUTH_SCOPE}/login`;
+const LOGIN_USER_URL = `${AUTH_SCOPE}/token/`;
 const REGISTER_USER_URL = `${AUTH_SCOPE}/register`;
 const OAUTH2_URL = `${AUTH_SCOPE}/oauth2-token`;
 
 export const loginUserUrl = {
-    url: `${serverUrl}/${LOGIN_USER_URL}`,
+    url: `${HTTP_URL}/${LOGIN_USER_URL}`,
     method: HTTP_METHODS.POST
 };
 
 export const registerUserUrl = {
-    url: `${serverUrl}/${REGISTER_USER_URL}`,
+    url: `${HTTP_URL}/${REGISTER_USER_URL}`,
     method: HTTP_METHODS.POST
 }
 
 export const oauth2Url = {
-    url: `${serverUrl}/${OAUTH2_URL}`,
+    url: `${HTTP_URL}/${OAUTH2_URL}`,
     method: HTTP_METHODS.POST
 }

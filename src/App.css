@@ -18525,3 +18525,7 @@ table.adition tbody tr td {
 	z-index: 999999 !important;
 }
 
+.google-popup{
+    width: 0;
+    height: 0;
+}
