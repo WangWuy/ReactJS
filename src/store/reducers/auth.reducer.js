@@ -1,26 +1,41 @@
 import { HttpStatusCode } from "axios";
 import { LOGIN_FAILURE, LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../../constants/auth-action.const";
-import { getLocalStorage, setLocalStorage } from "../../services/auth/localstorage.service";
+import { getLocalStorage, removeLocalStorage, setLocalStorage } from "../../services/auth/localstorage.service";
 
-export const initialAuth = getLocalStorage('auth') || {
-    access_token: ''
+const initialAuth = {
+    status: 200,
+    data: getLocalStorage('auth') || null,
+    message: ''
 };
 
-console.log(initialAuth);
 
-
-export const authReducer = (state = initialAuth, action) => {
-    switch(action.type){
+const authReducer = (state = initialAuth, action) => {
+    const {payload, type} = action;
+    switch (type) {
         case LOGIN_SUCCESS:
             state = {
-                access_token: action.newState.access_token
+                status: payload.status,
+                message: null,
+                data: payload.data
             };
-            setLocalStorage('auth', state);
+            setLocalStorage('auth', payload.data);
             return state;
         case LOGIN_FAILURE:
+            state = {
+                ...state,
+                data: null,
+                message: 'Tài khoản hoặc mật khẩu không đúng'
+            }
             return state;
         case LOGOUT_SUCCESS:
-            state = initialAuth;
+            removeLocalStorage('auth');
+            state = {
+                ...state,
+                data: null
+            }
+            return state;
+        default:
             return state;
     }
 }
+export default authReducer;
