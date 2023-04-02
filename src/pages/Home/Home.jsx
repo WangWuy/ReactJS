@@ -4,8 +4,6 @@ import Layout from "../../components/Layout/Layout"
 import { logoutAction } from "../../store/actions/auth.action"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import '/Users/huynhquanghuy/Documents/GitHub/ReactJS/src/script.js';
-import SimpleImageSlider from "react-simple-image-slider";
 import Carousel from 'react-elastic-carousel';
 
 
