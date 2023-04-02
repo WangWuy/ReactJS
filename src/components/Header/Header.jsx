@@ -9,7 +9,7 @@ import axios from 'axios';
 const Header = () => {
     const sliderImages = [ 
         {
-           url: "./images/logo2.png",
+           url: "./images/tuyensinh.jpeg",
         },
      ];
 
@@ -27,7 +27,7 @@ const Header = () => {
             url:'http://127.0.0.1:8000/slider/',
             method:'GET', 
             headers:{
-                'Authorization': `Bearer BoPnpDpitS2L40YTaJsndcYbuWlUZ9`,
+                'Authorization': `Bearer 6YzuFy9nlUnR9YzjjKYZAukv9CDaWz`,
             }
         }).then(res => {
             const newBanner = res.data.map(banner=>banner.image)
@@ -128,7 +128,7 @@ const Header = () => {
                         </li>
                         <li><a className="text-white " onClick={() => navigate('/registration')} title=""><i className="fa fa-film"></i> Đăng ký</a>
                         </li>
-                        <li><a className="text-white "  title=""><i className="fa fa-female"></i> Tuyển sinh</a>
+                        <li><a className="text-white " onClick={() => navigate('/admissions')} title=""><i className="fa fa-female"></i> Tuyển sinh</a>
                         </li>
                         <li><a className="text-white "  title=""><i className="fa fa-graduation-cap"></i> Các khoa</a>
                         </li>
@@ -148,9 +148,9 @@ const Header = () => {
                             <SimpleImageSlider
                                 width="100%"
                                 height={500}
-                                images= {slider}
-                                showBullets={true}
-                                showNavs={true}
+                                images= {sliderImages}
+                                // showBullets={true}
+                                // showNavs={true}
                             />
                         </figure>
                     </div>

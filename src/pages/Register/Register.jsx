@@ -36,7 +36,7 @@ const Register = () => {
                 method:'POST', 
                 data: formData,
                 headers:{
-                    'Authorization': `Bearer BoPnpDpitS2L40YTaJsndcYbuWlUZ9`,
+                    'Authorization': `Bearer 6YzuFy9nlUnR9YzjjKYZAukv9CDaWz`,
                 }
             }).then(res => {})
         },

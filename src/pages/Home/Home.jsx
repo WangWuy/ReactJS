@@ -1,9 +1,11 @@
 import { memo } from "react"
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row, Badge } from 'react-bootstrap';
 import Layout from "../../components/Layout/Layout"
 import { logoutAction } from "../../store/actions/auth.action"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import '/Users/huynhquanghuy/Documents/GitHub/ReactJS/src/script.js';
+import SimpleImageSlider from "react-simple-image-slider";
 import Carousel from 'react-elastic-carousel';
 
 
@@ -30,28 +32,12 @@ const Home = () => {
 					<Col lg={12}>
 						<div className="sliderz-slick">
 							<Row>
-								<Col md={6}>
+								<Col md={12}>
 									<div className="central-meta">
-										<h6 className="create-post">Khoa</h6>
-										<div className="slick-single">
-											<div>
-											<Carousel 	itemsToShow={1}
-															itemPadding={[0, 0, 8, 8]}>
-												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
-												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
-												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
-												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
-												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
-												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
-												</Carousel>
-											</div>
-										</div>
-									</div>
-									<div className="central-meta">
-										<h6 className="create-post">Chuyên ngành</h6>
+										<h6 className="create-post" onClick={() => navigate('/admissions')}><Badge bg="primary" text="light">Tuyển sinh hệ chính quy</Badge></h6>
 										<div className="slider-for">
 											<div className="slick-slide-item">
-											<Carousel 	itemsToShow={3}
+											<Carousel 	itemsToShow={5}
 															itemPadding={[0, 0, 8, 8]}
 															enableAutoPlay={true}
 															autoPlaySpeed={2000}>
@@ -66,12 +52,12 @@ const Home = () => {
 										</div>
 									</div>
 								</Col>
-								<Col md={6}>
+								<Col md={12}>
 									<div className="central-meta">
-										<h6 className="create-post">Multiple Items</h6>
+										<h6 className="create-post" onClick={() => navigate('/admissions')}><Badge bg="success" text="light">Tuyển sinh hệ liên thông</Badge></h6>
 										<div className="slick-multiple">
 											<div className="slick-slide-item">
-												<Carousel 	itemsToShow={3}
+												<Carousel 	itemsToShow={5}
 															itemPadding={[0, 0, 8, 8]}
 															enableAutoPlay={1}
 															autoPlaySpeed={2000}>
@@ -89,10 +75,46 @@ const Home = () => {
 										</div>
 									</div>
 									<div className="central-meta">
-										<h6 className="create-post">Multiple Items</h6>
+										<h6 className="create-post" onClick={() => navigate('/admissions')}><Badge bg="warning" text="light">Tuyển sinh cao học</Badge></h6>
 										<div className="slick-multiple">
 											<div className="slick-slide-item">
-											<Carousel 	itemsToShow={3}
+											<Carousel 	itemsToShow={5}
+															itemPadding={[0, 0, 8, 8]}
+															enableAutoPlay={true}
+															autoPlaySpeed={2000}>
+												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
+												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
+												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
+												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
+												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
+												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
+												</Carousel>
+											</div>
+										</div>
+									</div>
+									<div className="central-meta">
+										<h6 className="create-post" onClick={() => navigate('/admissions')}><Badge bg="success" text="light">Tuyển sinh thạc sĩ</Badge></h6>
+										<div className="slick-multiple">
+											<div className="slick-slide-item">
+											<Carousel 	itemsToShow={5}
+															itemPadding={[0, 0, 8, 8]}
+															enableAutoPlay={true}
+															autoPlaySpeed={2000}>
+												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
+												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
+												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
+												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
+												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
+												<img src="./images/resources/slick1.jpg" className="img-fluid" alt=""/>
+												</Carousel>
+											</div>
+										</div>
+									</div>
+									<div className="central-meta">
+										<h6 className="create-post" onClick={() => navigate('/admissions')}><Badge bg="info" text="light">Tuyển sinh đào tạo từ xa</Badge></h6>
+										<div className="slick-multiple">
+											<div className="slick-slide-item">
+											<Carousel 	itemsToShow={5}
 															itemPadding={[0, 0, 8, 8]}
 															enableAutoPlay={true}
 															autoPlaySpeed={2000}>

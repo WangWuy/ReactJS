@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Registration from "./pages/Registration/Registration";
+import Admissions from "./pages/Admissions/Admissions";
 
 export const ROUTERS = [
   {
@@ -40,5 +41,10 @@ export const ROUTERS = [
     path: "/registration",
     passAuth: false,
     element: < Registration />,
+  },
+  {
+    path: "/admissions",
+    passAuth: false,
+    element: < Admissions />,
   },
 ];
