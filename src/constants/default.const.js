@@ -7,7 +7,7 @@ export const HTTP_METHODS = {
 
 /** ================ BASE URL ================== */
 
-export const HTTP_URL = 'https://ed48-14-161-49-145.ap.ngrok.io';
+export const HTTP_URL = 'https://70f7-113-161-58-109.ap.ngrok.io';
 export const WEBSOCKET_URL = 'ws://localhost:8000';
 
 

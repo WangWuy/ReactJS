@@ -26,7 +26,7 @@ const Registration = () => {
             url:'http://127.0.0.1:8000/users/current-user/',
             method:'GET', 
             headers:{
-                'Authorization': `Bearer Hi3gYQV4McKUaVbmoSc198lsfy2TDT`,
+                'Authorization': `Bearer BoPnpDpitS2L40YTaJsndcYbuWlUZ9`,
             }
         }).then(res => {
            setUserLogin(res.data)
@@ -49,7 +49,7 @@ const Registration = () => {
                 method:'PUT', 
                 param: {},
                 headers:{
-                    'Authorization': `Bearer Hi3gYQV4McKUaVbmoSc198lsfy2TDT`,
+                    'Authorization': `Bearer BoPnpDpitS2L40YTaJsndcYbuWlUZ9`,
         
                 }
             }).then(res => {

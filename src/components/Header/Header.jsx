@@ -6,10 +6,12 @@ import { logoutAction } from "../../store/actions/auth.action";
 import SimpleImageSlider from "react-simple-image-slider";
 import axios from 'axios';
 
-const widths = 100;
-
 const Header = () => {
-    
+    const sliderImages = [ 
+        {
+           url: "./images/logo2.png",
+        },
+     ];
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -17,20 +19,29 @@ const Header = () => {
         dispatch(logoutAction());
     }
     const [banner, setBanner] = useState([]);
+    
+    const [slider ,setsliderImages] = useState([]);
 
     useEffect( () => {
         axios({
             url:'http://127.0.0.1:8000/slider/',
             method:'GET', 
             headers:{
-                'Authorization': `Bearer Hi3gYQV4McKUaVbmoSc198lsfy2TDT`,
+                'Authorization': `Bearer BoPnpDpitS2L40YTaJsndcYbuWlUZ9`,
             }
         }).then(res => {
-            const newBanner = res.data.map(banner=>banner.banner_url)
+            const newBanner = res.data.map(banner=>banner.image)
             setBanner(newBanner) 
-            console.log(newBanner);
+            const newSliderBanner = newBanner.map((slider)=>{
+                return {url: slider}
+            })
+            setBanner(newSliderBanner) 
+            setsliderImages(newSliderBanner)
           })
        }, []);
+       console.log(11, slider);
+       console.log(2, sliderImages);
+    
 
     return (
         <header>
@@ -137,7 +148,7 @@ const Header = () => {
                             <SimpleImageSlider
                                 width="100%"
                                 height={500}
-                                images= {banner}
+                                images= {slider}
                                 showBullets={true}
                                 showNavs={true}
                             />
