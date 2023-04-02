@@ -68,7 +68,7 @@ const Login = () => {
         <span>{errors.password && <p className='form-error'>{errors.password.message}</p>}</span>
         <span>{errors[HTTP_ERROR] && <p className='form-error'>{errors[HTTP_ERROR]?.message}</p>}</span>
         <input type="checkbox" /><label>Lưu mật khẩu</label>
-        <Link to='/forgot-password' className="forgot" >Quên mật khẩu</Link>
+        {/* <Link to='/forgot-password' className="forgot" >Quên mật khẩu</Link> */}
         <button>Login</button>
       </form>
       <span>Bạn chưa có tài khoản? <Link className="we-account" to={'/register'} title="">Đăng ký</Link></span>

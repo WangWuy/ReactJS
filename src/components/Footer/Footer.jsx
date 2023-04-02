@@ -4,8 +4,8 @@ import { useContext, useEffect, useReducer, useState } from 'react';
 
 const Footer = () => {
     return (
-        <footer>
-            <Container>
+        <footer className='pb-0'>
+            <Container className='pb-4'>
                 <Row>
                     <Col lg={4} md={4}>
                         <div className="widget">
