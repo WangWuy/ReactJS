@@ -3,7 +3,6 @@ import { Button, Col, Container, Form, Row, Badge } from 'react-bootstrap';
 import Layout from "../../components/Layout/Layout"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import '/Users/huynhquanghuy/Documents/GitHub/ReactJS/src/script.js';
 import Carousel from 'react-elastic-carousel';
 
 
