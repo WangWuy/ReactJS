@@ -3,7 +3,7 @@ import { LOGIN_FAILURE, LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../../constants/au
 import { getLocalStorage, removeLocalStorage, setLocalStorage } from "../../services/auth/localstorage.service";
 
 const initialAuth = {
-    status: 200,
+    status: HttpStatusCode.Ok,
     data: getLocalStorage('auth') || null,
     message: ''
 };

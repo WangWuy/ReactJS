@@ -38,7 +38,7 @@ export const ROUTERS = [
     element: <NotfoundError/>,
   },
   {
-    path: "/registration",
+    path: "/update-profile",
     passAuth: false,
     element: < Registration />,
   },

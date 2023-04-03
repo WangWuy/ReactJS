@@ -1,48 +1,18 @@
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
-import { useContext, useEffect, useReducer, useState } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import {Form } from 'react-bootstrap';
+import {useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
 import { logoutAction } from "../../store/actions/auth.action";
-import SimpleImageSlider from "react-simple-image-slider";
-import axios from 'axios';
+import { memo } from 'react';
+import Slider from '../Sliders/Slider';
 
 const Header = () => {
-    const sliderImages = [ 
-        {
-           url: "./images/tuyensinh.jpeg",
-        },
-     ];
+    
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleLogout = (e) => {
         dispatch(logoutAction());
     }
-    const [banner, setBanner] = useState([]);
-    
-    const [slider ,setsliderImages] = useState([]);
-
-    useEffect( () => {
-        axios({
-            url:'http://127.0.0.1:8000/slider/',
-            method:'GET', 
-            headers:{
-                'Authorization': `Bearer 6YzuFy9nlUnR9YzjjKYZAukv9CDaWz`,
-            }
-        }).then(res => {
-            const newBanner = res.data.map(banner=>banner.image)
-            setBanner(newBanner) 
-            const newSliderBanner = newBanner.map((slider)=>{
-                return {url: slider}
-            })
-            setBanner(newSliderBanner) 
-            setsliderImages(newSliderBanner)
-          })
-       }, []);
-       console.log(11, slider);
-       console.log(2, sliderImages);
-    
-
     return (
         <header>
             <div className="responsive-header">
@@ -115,7 +85,7 @@ const Header = () => {
                         <div className="user-setting">
                             <span className="seting-title">Thiết lập người dùng</span>
                             <ul className="log-out">
-                                <li><a title="" onClick={() => navigate('/registration')}><i className="ti-pencil-alt"></i>Chỉnh sửa thông tin</a></li>
+                                <li><a title="" onClick={() => navigate('/update-profile')}><i className="ti-pencil-alt"></i>Chỉnh sửa thông tin</a></li>
                                 <li><a href="logout.html" title="" onClick={handleLogout}><i className="ti-power-off"></i>Đăng xuất</a></li>
                             </ul>
                         </div>
@@ -126,7 +96,7 @@ const Header = () => {
                     <ul className="nav-list">
                         <li><a className="text-white " onClick={() => navigate('/')} title=""><i className="fa fa-home"></i> Trang chủ</a>
                         </li>
-                        <li><a className="text-white " onClick={() => navigate('/registration')} title=""><i className="fa fa-film"></i> Đăng ký</a>
+                        <li><a className="text-white " onClick={() => navigate('/update-profile')} title=""><i className="fa fa-film"></i> Đăng ký</a>
                         </li>
                         <li><a className="text-white " onClick={() => navigate('/admissions')} title=""><i className="fa fa-female"></i> Tuyển sinh</a>
                         </li>
@@ -144,19 +114,11 @@ const Header = () => {
             <section>
                 <div className="">
                     <div className="">
-                        <figure>  
-                            <SimpleImageSlider
-                                width="100%"
-                                height={500}
-                                images= {sliderImages}
-                                // showBullets={true}
-                                // showNavs={true}
-                            />
-                        </figure>
+                        <Slider />
                     </div>
                 </div>
             </section>
         </header>
     )
 }
-export default Header
+export default memo(Header);

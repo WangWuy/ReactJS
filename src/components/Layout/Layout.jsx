@@ -17,4 +17,4 @@ const Layout = ({ children, showSidebar = IS_SHOW_SIDEBAR}) => {
     )
 }
 
-export default Layout
+export default Layout;
