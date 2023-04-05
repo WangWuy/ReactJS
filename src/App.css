@@ -11125,6 +11125,7 @@ aside .widget.pitnik-links > ul > li > a {
     padding: 5px 10px;
     transition: all 0.2s linear 0s;
     width: 100%;
+    cursor: pointer;
 }
 .nav-list > li > a {
     display: inline-block;

@@ -21,7 +21,6 @@ const Header = () => {
     const [banner, setBanner] = useState([]);
     
     const [slider ,setsliderImages] = useState([]);
-
     useEffect( () => {
         axios({
             url:'http://127.0.0.1:8000/slider/',
@@ -130,7 +129,15 @@ const Header = () => {
                         </li>
                         <li><a className="text-white " onClick={() => navigate('/admissions')} title=""><i className="fa fa-female"></i> Tuyển sinh</a>
                         </li>
-                        <li><a className="text-white "  title=""><i className="fa fa-graduation-cap"></i> Các khoa</a>
+                        <li><a className="text-white " onClick={() => navigate('/falcuty')} title=""><i className="fa fa-graduation-cap"></i> Các khoa</a>
+                            <ul>
+                                <li><a onClick={() => navigate('/falcuty')} title="">Khoa A</a></li>
+                                <li><a onClick={() => navigate('/falcuty')} title="">Khoa A</a></li>
+                                <li><a onClick={() => navigate('/falcuty')} title="">Khoa A</a></li>
+                                <li><a onClick={() => navigate('/falcuty')} title="">Khoa A</a></li>
+                                <li><a onClick={() => navigate('/falcuty')} title="">Khoa A</a></li>
+                                <li><a onClick={() => navigate('/falcuty')} title="">Khoa A</a></li>
+                            </ul>
                         </li>
                         <li><a className="text-white "  title=""><i className="fa fa-heart"></i> Đặt câu hỏi</a>
                         </li>

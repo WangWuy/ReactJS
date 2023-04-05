@@ -4,6 +4,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Registration from "./pages/Registration/Registration";
 import Admissions from "./pages/Admissions/Admissions";
+import Falcuty from "./pages/Falcuty/Falcuty";
 
 export const ROUTERS = [
   {
@@ -46,5 +47,10 @@ export const ROUTERS = [
     path: "/admissions",
     passAuth: false,
     element: < Admissions />,
+  },
+  {
+    path: "/falcuty",
+    passAuth: false,
+    element: < Falcuty />,
   },
 ];
