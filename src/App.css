@@ -1551,6 +1551,7 @@ header.sticky {
     width: 100%;
     color: #515365;
     position: relative;
+    cursor: pointer;
 }
 .create-post::before {
     content: "";
@@ -5917,6 +5918,7 @@ a.addnewforum {
     margin-top: 5px;
     text-transform: capitalize;
     vertical-align: middle;
+    cursor: pointer;
 }
 /*--- login sidebar ---*/
 
@@ -9001,6 +9003,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .friend-group .edit-phto .fileContainer {
     margin: 5px 3px;
 	color: #515365;
+    border-radius: 50%;
 }
 .friend-group .edit-phto .fileContainer:hover{
 	color: #fff;
@@ -18977,4 +18980,12 @@ a.btn2:hover,
 .timeline-info > ul li a:after,
 .popup::after{
 	border-bottom-color: #fa6342;
+}
+
+
+.edit-phto{
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 4px;
 }

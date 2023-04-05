@@ -51,9 +51,6 @@ instance.interceptors.response.use(
 );
 
 
-
-
-
 export const sendRequest = async (url, options) => {
     const res = await instance.request({
         url,

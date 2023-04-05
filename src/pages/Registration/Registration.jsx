@@ -1,67 +1,47 @@
 import { memo, useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
-import { logoutAction } from "../../store/actions/auth.action";
-import { useDispatch } from "react-redux";
-import {Col, Row } from 'react-bootstrap';
+import { useDispatch, useSelector } from "react-redux";
+import { Col, Row } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom"
-import axios from 'axios';
-import { useState } from "react";
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import Swal from "sweetalert2";
+import { useForm } from "react-hook-form";
+import {AiFillCamera} from 'react-icons/ai';
+import { getMeAction, updateProfileAction } from "../../store/actions/users.action";
+import { profileEmailValidationProperty, profileFirstNameValidationPropery, profileLastNameValidationPropery, profilePasswordValidationPropery, profileUsernameValidationProperty } from "../../utils/validations/update-profile";
 
 const Registration = () => {
+    const user = useSelector(state => state.usersReducer);
+    const { register, handleSubmit, setValue, formState: { errors } } = useForm();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const handleLogout = (e) => {
-        dispatch(logoutAction());
+
+    const handleUpdateProfileSubmit = (data) => {
+       dispatch(updateProfileAction(data,user.data?.id, navigate));
     }
 
-    const [userLogin, setUserLogin] = useState({});
+    const handleUpdateAvatar = (e) => {
+        console.log(e.target.files[0]);
+        dispatch(updateProfileAction({
+            username: user.data?.username,
+            password: '123456',
+            firstName: user.data?.first_name,
+            lastName: user.data?.last_name,
+            email: user.data?.email,
+            avatar: e.target.files[0]
+        },user.data?.id));
+    }
 
-    useEffect( () => {
-        axios({
-            url:'http://127.0.0.1:8000/users/current-user/',
-            method:'GET', 
-            headers:{
-                'Authorization': `Bearer 6YzuFy9nlUnR9YzjjKYZAukv9CDaWz`,
-            }
-        }).then(res => {
-           setUserLogin(res.data)
-          })
-       }, []);
+    useEffect(() => {
+        setValue('firstName',user.data?.first_name);
+        setValue('lastName',user.data?.last_name);
+        setValue('password',user.data?.password);
+        setValue('username',user.data?.username);
+        setValue('email',user.data?.email);
+    },[user.data]);
 
-    const formik = useFormik({
-        enableReinitialize : true,
-        initialValues: {
-            firstName: userLogin.first_name,
-            lastName: userLogin.last_name,
-            userName: userLogin.username,
-            passWord: '',
-            email: userLogin.email,
-        },
-        onSubmit: (values) => {
-            console.log(values);
-            axios({
-                url:`http://127.0.0.1:8000/users/${userLogin.id}`,
-                method:'PUT', 
-                param: {},
-                headers:{
-                    'Authorization': `Bearer 6YzuFy9nlUnR9YzjjKYZAukv9CDaWz`,
-        
-                }
-            }).then(res => {
-                Swal.fire(
-                    'Good job!',
-                    'You clicked the button!',
-                    'success'
-                )
-              })
-        },validationSchema: Yup.object().shape({
-            // passWord: Yup.string().required('(*) Mật khẩu Không được bỏ trống'),
-      })
-      })
-   
+
+    useEffect(() => {
+        dispatch(getMeAction());
+    }, []);
 
 
     return (
@@ -82,60 +62,57 @@ const Registration = () => {
                                     </div>
                                     <div className="setting-meta">
                                         <div className="change-photo">
-                                            <figure><img src="{userLogin?.first_name}" alt=""/></figure>
+                                            <figure><img src={user.data?.avatar} alt="ảnh?" /></figure>
                                             <div className="edit-img">
                                                 <form className="edit-phto">
-                                                    <label className="fileContainer">
-                                                        <i className="fa fa-camera-retro"></i>
-                                                        Thay đổi avatar
-                                                    <input type="file" />
+                                                <label className="fileContainer">
+                                                        <AiFillCamera/>
+                                                        <input onChange={handleUpdateAvatar} type="file" />
                                                     </label>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="stg-form-area">
-                                        <form i className="c-form" onSubmit={formik.handleSubmit}>
+                                        <form onSubmit={handleSubmit(handleUpdateProfileSubmit)} className="c-form">
                                             <Row>
-                                            <Col lg={6}>
-                                                <label>Họ</label>
-                                                <input type="text" value={formik.values.firstName} placeholder="..." name="firstName" onChange={formik.handleChange} onBlur={formik.handleBlur}/>
-                                            </Col>
-                                            <Col lg={6}>
-                                                <label>Tên</label>
-                                                <input type="text" value={formik.values.lastName} placeholder="..." name="lastName" onChange={formik.handleChange} onBlur={formik.handleBlur}/>
-                                            </Col>
+                                                <Col lg={6}>
+                                                    <label>Họ</label>
+                                                    <input {...register(profileFirstNameValidationPropery.name, profileFirstNameValidationPropery.options)} type="text" placeholder="Họ" name="firstName" />
+                                                    <div className="text text-danger">{errors.firstName && errors.firstName.message}</div>
+                                                </Col>
+                                                <Col lg={6}>
+                                                    <label>Tên</label>
+                                                    <input {...register(profileLastNameValidationPropery.name, profileLastNameValidationPropery.options)} type="text" placeholder="Tên" name="lastName" />
+                                                    <div className="text text-danger">{errors.lastName && errors.lastName.message}</div>
+                                                </Col>
                                             </Row>
                                             <div className="uzer-nam">
-                                                <label>Tài khoản</label>
-                                                <input type="text" value={formik.values.userName} placeholder="..." name="userName" onChange={formik.handleChange} onBlur={formik.handleBlur}/>
+                                                <label>Tên đăng nhập</label>
+                                                <input {...register(profileUsernameValidationProperty.name, profileUsernameValidationProperty.options)} type="text" placeholder="Tên đăng nhập" name="userName" />
+                                                <div className="text text-danger">{errors.username && errors.username.message}</div>
                                             </div>
                                             <div className="uzer-nam">
                                                 <label>Nhập mật khẩu mới</label>
-                                                <input type="password" onChange={formik.handleChange} onBlur={formik.handleBlur}/>
-                                                <div className="text text-danger">{formik.errors.passWord && formik.touched.passWord ? (<div>{formik.errors.passWord}</div>) : null} </div>
+                                                <input {...register(profilePasswordValidationPropery.name, profilePasswordValidationPropery.options)} placeholder="Mật khẩu" type="password" />
+                                                <div className="text text-danger">{errors.password && errors.password.message}</div>
                                             </div>
                                             <div>
                                                 <label>Email</label>
-                                                <input type="text" value={formik.values.email} placeholder="abc@gmail.com" name="email" onChange={formik.handleChange} onBlur={formik.handleBlur}/>
+                                                <input {...register(profileEmailValidationProperty.name, profileEmailValidationProperty.options)} type="text" placeholder="abc@gmail.com" name="email" />
+                                                <div className="text text-danger">{errors.email && errors.email.message}</div>
                                             </div>
                                             <div>
-                                                <button type="submit" data-ripple="">Lưu</button>
+                                                <button type="submit">Lưu</button>
                                                 <button onClick={() => navigate('/')} type="submit" data-ripple="">Huỷ</button>
                                             </div>
                                         </form>
-                                        {/* <form className="c-form"  onSubmit={formik.handleSubmit}>
-                                    
-                                                <input type="text" placeholder="..." name="firstName" onChange={formik.handleChange} onBlur={formik.handleBlur}/>
-                                                <div className="text text-danger">{formik.errors.firstName && formik.touched.firstName ? (<div>{formik.errors.firstName}</div>) : null} </div>
-                                                <button type="submit" data-ripple="">Lưu</button>
-                                            </form> */}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>	
+                </div>
             </Col>
         </Layout>
     )
